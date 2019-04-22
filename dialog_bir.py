@@ -5,9 +5,9 @@ from PyQt5.QtWidgets import QApplication,QDialog,QTableWidgetItem,QMessageBox
 from PyQt5.QtCore import pyqtSlot
 from PyQt5 import uic
 
-class Dialog(QDialog):
+class Dialog_Bir(QDialog):
     def __init__(self, parent=None):
-        super(Dialog, self).__init__(parent)
+        super(Dialog_Bir, self).__init__(parent)
         ## veritabanı ve arayüz dosyaları çağırılıyor
         self.pencere = uic.loadUi(os.getcwd()+r"\pencere_derece1.ui")
         self.fn = Hesaplama()

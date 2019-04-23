@@ -6,6 +6,7 @@ from PyQt5.QtCore import pyqtSlot
 from PyQt5 import uic
 from dialog_bir import Dialog_Bir
 from dialog_iki import Dialog_Iki
+from dialog_sinus import Dialog_Sinus
 
 
 class Ana(QMainWindow):
@@ -24,8 +25,10 @@ class Ana(QMainWindow):
         #Menü ile ilişkilendirme
         self.git_bir = Dialog_Bir(self)
         self.git_iki = Dialog_Iki(self)
+        self.git_sinus = Dialog_Sinus(self)
         ## Ekranda Gösterim için
         self.win.show()
+
 
     def InitUI(self):
         self.win.sec_dnk_tip.clear()
@@ -33,13 +36,14 @@ class Ana(QMainWindow):
         for a in self.fn.Tip_Listele():
             self.win.sec_dnk_tip.addItem(a)
         
-    
     def Pencere_Ac(self) :
         secim = self.win.sec_dnk_tip.currentText()
         if secim == "Birinci Dereceden Denklem" :
             self.git_bir.pencere.show()
         elif secim == "İkinci Dereceden Denklem" :
             self.git_iki.pencere.show()
+        elif secim == "Sinüs Dalga" :
+            self.git_sinus.pencere.show()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

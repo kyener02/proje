@@ -12,7 +12,7 @@ class Dialog_Bir(QDialog):
         self.pencere = uic.loadUi(os.getcwd()+r"\pencere_derece1.ui")
         self.fn = Hesaplama()
         self.pencere.bt_ciz.clicked.connect(self.Ciz)
-        self.pencere.bt_cikis.clicked.connect(self.pencere.close)
+        self.pencere.bt_cikis.clicked.connect(self.Cikis)
         self.pencere.bt_sifirla.clicked.connect(self.InitUI)
 
 
@@ -28,3 +28,7 @@ class Dialog_Bir(QDialog):
         coef_m =  int(self.pencere.txt_coef_m.text())
         coef_n =  int(self.pencere.txt_coef_n.text())
         self.fn.Birinci_Derece(scl_min,scl_max,coef_m,coef_n)
+    
+    def Cikis(self) :
+        self.InitUI()
+        self.pencere.close()

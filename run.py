@@ -7,6 +7,7 @@ from PyQt5 import uic
 from dialog_bir import Dialog_Bir
 from dialog_iki import Dialog_Iki
 from dialog_sinus import Dialog_Sinus
+from dialog_mod import Dialog_Mod
 
 
 class Ana(QMainWindow):
@@ -14,6 +15,7 @@ class Ana(QMainWindow):
         super().__init__()
         ## veritabanı ve arayüz dosyaları çağırılıyor
         self.win = uic.loadUi(os.getcwd()+r"\design.ui")
+        self.win.setWindowTitle = 'PyQt5 simple window - pythonspot.com'
         self.fn = Hesaplama()
         ## Arayüzdeki nesneler veritabanından dolduruluyor
         self.InitUI()
@@ -26,6 +28,7 @@ class Ana(QMainWindow):
         self.git_bir = Dialog_Bir(self)
         self.git_iki = Dialog_Iki(self)
         self.git_sinus = Dialog_Sinus(self)
+        self.git_mod = Dialog_Mod(self)
         ## Ekranda Gösterim için
         self.win.show()
 
@@ -44,6 +47,8 @@ class Ana(QMainWindow):
             self.git_iki.pencere.show()
         elif secim == "Sinüs Dalga" :
             self.git_sinus.pencere.show()
+        elif secim == "Modulation" :
+            self.git_mod.pencere.show()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

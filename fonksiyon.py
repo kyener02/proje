@@ -1,6 +1,6 @@
 class Hesaplama :
     def Tip_Listele(self) :
-        variable=[("Birinci Dereceden Denklem"),("İkinci Dereceden Denklem"),("Sinüs Dalga")]
+        variable=[("Birinci Dereceden Denklem"),("İkinci Dereceden Denklem"),("Sinüs Dalga"),("Modulation")]
         return variable
     
     def Birinci_Derece(self,scl_min,scl_max,coef_m,coef_n) :
@@ -39,4 +39,36 @@ class Hesaplama :
         plt.grid()
         plt.show()
 
+    def Modulation(self,scl_min,scl_max,Fs,car_amp,car_freq,sig_amp,sig_freq,tip) :
+        import matplotlib.pyplot as plot
+        import numpy as np
+        import sys
+        from scipy import signal
+
+        m = sig_amp / car_amp
+        t = np.arange(scl_min,scl_max,1/Fs)
+
+        if (tip == 'fm'):
+            y= np.sin(2 * np.pi * car_freq * t + m*np.sin(2 * np.pi * sig_freq * t))
+        else :
+	        y= (1+m*np.sin(2 * np.pi * sig_freq * t))* np.sin(2 * np.pi * car_freq * t)
+
+        n = len(y) # length of the signal
+        k = np.arange(n)
+        T = n/Fs
+        frq = k/T # two sides frequency range
+        frq = frq[range(n//2)] # one side frequency range
+        Y = np.fft.fft(y)/n # fft computing and normalization
+        Y = Y[range(n//2)]
+
+        fig,myplot = plot.subplots(2, 1)
+        myplot[0].plot(t,y)
+        myplot[0].set_xlabel('Time')
+        myplot[0].set_ylabel('Amplitude')
+
+        myplot[1].plot(frq,abs(Y)) # plotting the spectrum
+        myplot[1].set_xlabel('Freq (Hz)')
+        myplot[1].set_ylabel('|Y(freq)|')
+        
+        plot.show()
 

@@ -50,9 +50,9 @@ class Hesaplama :
 
         if (tip == 'fm'):
             y= np.sin(2 * np.pi * car_freq * t + m*np.sin(2 * np.pi * sig_freq * t))
-        else :
+        elif (tip == 'am') :
 	        y= (1+m*np.sin(2 * np.pi * sig_freq * t))* np.sin(2 * np.pi * car_freq * t)
-
+        
         n = len(y) # length of the signal
         k = np.arange(n)
         T = n/Fs

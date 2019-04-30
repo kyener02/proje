@@ -24,12 +24,15 @@ class Dialog_Iki(QDialog):
         self.pencere.txt_coef_c.setText("")
 
     def Ciz(self) :
-        scl_min =  int(self.pencere.txt_scl_min.text())
-        scl_max =  int(self.pencere.txt_scl_max.text())
-        coef_a =  int(self.pencere.txt_coef_a.text())
-        coef_b =  int(self.pencere.txt_coef_b.text())
-        coef_c =  int(self.pencere.txt_coef_c.text())
-        self.fn.Ikinci_Derece(scl_min,scl_max,coef_a,coef_b,coef_c)
+        try :
+            scl_min =  float(self.pencere.txt_scl_min.text())
+            scl_max =  float(self.pencere.txt_scl_max.text())
+            coef_a =  float(self.pencere.txt_coef_a.text())
+            coef_b =  float(self.pencere.txt_coef_b.text())
+            coef_c =  float(self.pencere.txt_coef_c.text())
+            self.fn.Ikinci_Derece(scl_min,scl_max,coef_a,coef_b,coef_c)
+        except :
+            QMessageBox.warning(self,"Hata","Geçerli Bir Değer Girin.",QMessageBox.Ok)
 
     def Cikis(self) :
         self.InitUI()

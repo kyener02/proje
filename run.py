@@ -15,7 +15,6 @@ class Ana(QMainWindow):
         super().__init__()
         ## veritabanı ve arayüz dosyaları çağırılıyor
         self.win = uic.loadUi(os.getcwd()+r"\design.ui")
-        self.win.setWindowTitle = 'PyQt5 simple window - pythonspot.com'
         self.fn = Hesaplama()
         ## Arayüzdeki nesneler veritabanından dolduruluyor
         self.InitUI()
@@ -49,6 +48,8 @@ class Ana(QMainWindow):
             self.git_sinus.pencere.show()
         elif secim == "Modulation" :
             self.git_mod.pencere.show()
+        else :
+            QMessageBox.warning(self,"Hata","Seçim Yapınız",QMessageBox.Ok)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -26,12 +26,15 @@ class Dialog_Sinus(QDialog):
         
 
     def Ciz(self) :
-        scl_min = int(self.pencere.txt_scl_min.text())
-        scl_max = int(self.pencere.txt_scl_max.text())
-        amp = int(self.pencere.txt_amp.text())
-        freq = int(self.pencere.txt_freq.text())
-        Fs = int(self.pencere.txt_fs.text())
-        self.fn.Sinus(scl_min,scl_max,Fs,amp,freq)
+        try :
+            scl_min = float(self.pencere.txt_scl_min.text())
+            scl_max = float(self.pencere.txt_scl_max.text())
+            amp = float(self.pencere.txt_amp.text())
+            freq = int(self.pencere.txt_freq.text())
+            Fs = int(self.pencere.txt_fs.text())
+            self.fn.Sinus(scl_min,scl_max,Fs,amp,freq)
+        except :
+            QMessageBox.warning(self,"Hata","Geçerli Bir Değer Girin.",QMessageBox.Ok)
 
     def Cikis(self) :
         self.InitUI()

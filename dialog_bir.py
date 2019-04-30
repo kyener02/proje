@@ -23,11 +23,14 @@ class Dialog_Bir(QDialog):
         self.pencere.txt_coef_n.setText("")
 
     def Ciz(self) :
-        scl_min =  int(self.pencere.txt_scl_min.text())
-        scl_max =  int(self.pencere.txt_scl_max.text())
-        coef_m =  int(self.pencere.txt_coef_m.text())
-        coef_n =  int(self.pencere.txt_coef_n.text())
-        self.fn.Birinci_Derece(scl_min,scl_max,coef_m,coef_n)
+        try :
+            scl_min =  float(self.pencere.txt_scl_min.text())
+            scl_max =  float(self.pencere.txt_scl_max.text())
+            coef_m =  float(self.pencere.txt_coef_m.text())
+            coef_n =  float(self.pencere.txt_coef_n.text())
+            self.fn.Birinci_Derece(scl_min,scl_max,coef_m,coef_n)
+        except :
+            QMessageBox.warning(self,"Hata","Geçerli Bir Değer Girin.",QMessageBox.Ok) 
     
     def Cikis(self) :
         self.InitUI()

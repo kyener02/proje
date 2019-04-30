@@ -26,15 +26,19 @@ class Dialog_Mod(QDialog):
         self.pencere.txt_mod_tip.setText("")
 
     def Ciz(self) :
-        scl_min = int(self.pencere.txt_scl_min.text())
-        scl_max = int(self.pencere.txt_scl_max.text())
-        Fs = int(self.pencere.txt_fs.text())
-        car_amp = float(self.pencere.txt_car_amp.text())
-        car_freq = int(self.pencere.txt_car_freq.text())
-        sig_amp = float(self.pencere.txt_sig_amp.text())
-        sig_freq = int(self.pencere.txt_sig_freq.text())
-        tip = self.pencere.txt_mod_tip.text()
-        self.fn.Modulation(scl_min,scl_max,Fs,car_amp,car_freq,sig_amp,sig_freq,tip)
+        try :
+            scl_min = float(self.pencere.txt_scl_min.text())
+            scl_max = float(self.pencere.txt_scl_max.text())
+            Fs = int(self.pencere.txt_fs.text())
+            car_amp = float(self.pencere.txt_car_amp.text())
+            car_freq = int(self.pencere.txt_car_freq.text())
+            sig_amp = float(self.pencere.txt_sig_amp.text())
+            sig_freq = int(self.pencere.txt_sig_freq.text())
+            tip = self.pencere.txt_mod_tip.text()
+            self.fn.Modulation(scl_min,scl_max,Fs,car_amp,car_freq,sig_amp,sig_freq,tip)
+        except :
+            QMessageBox.warning(self,"Hata","Geçerli Bir Değer Girin.",QMessageBox.Ok)
+        
 
     def Cikis(self) :
         self.InitUI()

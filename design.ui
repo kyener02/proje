@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Plotter</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="gridLayoutWidget">
@@ -33,7 +37,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>Denklem Seçiniz:</string>
+        <string>Tip Seçiniz:</string>
        </property>
       </widget>
      </item>

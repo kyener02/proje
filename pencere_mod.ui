@@ -24,19 +24,42 @@
       <x>110</x>
       <y>20</y>
       <width>621</width>
-      <height>432</height>
+      <height>455</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="txt_fs"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="txt_car_freq"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Min x:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="txt_scl_min"/>
+     </item>
+     <item row="13" column="0" colspan="2">
+      <widget class="QPushButton" name="bt_sifirla">
+       <property name="text">
+        <string>Sıfırla</string>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Sampling Rate:</string>
        </property>
       </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="txt_sig_amp"/>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_7">
@@ -48,38 +71,6 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="txt_fs"/>
-     </item>
-     <item row="7" column="1">
-      <widget class="QLineEdit" name="txt_sig_freq"/>
-     </item>
-     <item row="12" column="0" colspan="2">
-      <widget class="QPushButton" name="bt_cikis">
-       <property name="text">
-        <string>Çıkış</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0" colspan="2">
-      <widget class="QPushButton" name="bt_ciz">
-       <property name="text">
-        <string>Çiz</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="txt_car_freq"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="txt_car_amp"/>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="txt_scl_max"/>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="txt_scl_min"/>
-     </item>
      <item row="0" column="0" colspan="2">
       <widget class="QTextBrowser" name="textBrowser">
        <property name="html">
@@ -89,33 +80,6 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;AM: y = A&lt;/span&gt;&lt;span style=&quot; font-size:18pt; vertical-align:sub;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;(sin(2*pi*f&lt;/span&gt;&lt;span style=&quot; font-size:18pt; vertical-align:sub;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;*t) + &lt;/span&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:18pt; color:#000000; background-color:#ffffff;&quot;&gt;μ*&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;sin(2*&lt;/span&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:18pt; color:#000000; background-color:#ffffff;&quot;&gt;π&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;*f&lt;/span&gt;&lt;span style=&quot; font-size:18pt; vertical-align:sub;&quot;&gt;s&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;*t))) &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;FM: y = A&lt;/span&gt;&lt;span style=&quot; font-size:18pt; vertical-align:sub;&quot;&gt;c*&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;sin(2*pi*f&lt;/span&gt;&lt;span style=&quot; font-size:18pt; vertical-align:sub;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;*t + &lt;/span&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:18pt; color:#000000; background-color:#ffffff;&quot;&gt;μ*&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;sin(2*&lt;/span&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:18pt; color:#000000; background-color:#ffffff;&quot;&gt;π&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;*f&lt;/span&gt;&lt;span style=&quot; font-size:18pt; vertical-align:sub;&quot;&gt;s&lt;/span&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;*t))&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="text">
-        <string>Carrier Amplitude:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="11" column="0" colspan="2">
-      <widget class="QPushButton" name="bt_sifirla">
-       <property name="text">
-        <string>Sıfırla</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="text">
-        <string>Min x:</string>
        </property>
       </widget>
      </item>
@@ -139,13 +103,10 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
+     <item row="12" column="0" colspan="2">
+      <widget class="QPushButton" name="bt_ciz">
        <property name="text">
-        <string>Signal Frequency: </string>
+        <string>Çiz</string>
        </property>
       </widget>
      </item>
@@ -156,8 +117,47 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Signal Frequency: </string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0" colspan="2">
+      <widget class="QPushButton" name="bt_cikis">
+       <property name="text">
+        <string>Çıkış</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="txt_car_amp"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="txt_sig_freq"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="txt_scl_max"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Carrier Amplitude:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="txt_sig_amp"/>
+     </item>
      <item row="8" column="1">
-      <widget class="QLineEdit" name="txt_mod_tip"/>
+      <widget class="QComboBox" name="comboBox"/>
      </item>
     </layout>
     <zorder>txt_car_freq</zorder>
@@ -179,7 +179,7 @@ p, li { white-space: pre-wrap; }
     <zorder>label_6</zorder>
     <zorder>label_7</zorder>
     <zorder>label_8</zorder>
-    <zorder>txt_mod_tip</zorder>
+    <zorder>comboBox</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

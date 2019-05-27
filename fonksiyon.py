@@ -48,9 +48,9 @@ class Hesaplama :
         m = sig_amp / car_amp
         t = np.arange(scl_min,scl_max,1/Fs)
 
-        if (tip == 'fm'):
+        if (tip == 'Frequency Modulation'):
             y= np.sin(2 * np.pi * car_freq * t + m*np.sin(2 * np.pi * sig_freq * t))
-        elif (tip == 'am') :
+        elif (tip == 'Amplitude Modulation') :
 	        y= (1+m*np.sin(2 * np.pi * sig_freq * t))* np.sin(2 * np.pi * car_freq * t)
         
         n = len(y) # length of the signal
